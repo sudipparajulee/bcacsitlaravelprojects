@@ -11,6 +11,10 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <link rel="stylesheet" href="{{asset('datatable/datatables.css')}}">
+        <script src="{{asset('datatable/jquery-3.6.0.js')}}"></script>
+        <script src="{{asset('datatable/datatables.js')}}"></script>
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -23,7 +27,7 @@
                 <div class="mt-12">
                     <a href="{{route('dashboard')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">Dashboard</a>
 
-                    <a href="" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">Categories</a>
+                    <a href="{{route('category.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">Categories</a>
 
 
                     <a href="" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">News</a>
