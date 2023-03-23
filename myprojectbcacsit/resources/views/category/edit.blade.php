@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
-<h2 class="text-4xl text-blue-600 border-b-4 border-blue-300">Add New Category</h2>
+<h2 class="text-4xl text-blue-600 border-b-4 border-blue-300">Edit Category</h2>
 
 <form action="{{route('category.store')}}" method="POST" class="py-5">
     @csrf
-    <input type="text" class="w-full rounded-lg mt-5" placeholder="Category Name" name="name" value="{{old('name')}}">
+    <input type="text" class="w-full rounded-lg mt-5" placeholder="Category Name" name="name" value="{{$category->name}}">
     @error('name')
         <p class="text-red-600 text-sm">* {{$message}}</p>
     @enderror
-    <input type="text" class="w-full rounded-lg mt-5" placeholder="Priority" name="priority" value="{{old('priority')}}">
+    <input type="text" class="w-full rounded-lg mt-5" placeholder="Priority" name="priority" value="{{$category->priority}}">
     @error('priority')
         <p class="text-red-600 text-sm">* {{$message}}</p>
     @enderror
