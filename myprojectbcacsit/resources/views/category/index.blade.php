@@ -13,11 +13,13 @@
             <th>Action</th>
         </thead>
         <tbody>
+            @foreach($categories as $category)
             <tr>
-                <td>1</td>
-                <td>New Category</td>
+                <td>{{$category->priority}}</td>
+                <td>{{$category->name}}</td>
                 <td>Edit Delete</td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 

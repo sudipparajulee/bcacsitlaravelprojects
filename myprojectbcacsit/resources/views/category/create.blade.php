@@ -2,7 +2,8 @@
 @section('content')
 <h2 class="text-4xl text-blue-600 border-b-4 border-blue-300">Add New Category</h2>
 
-<form action="" class="py-5">
+<form action="{{route('category.store')}}" method="POST" class="py-5">
+    @csrf
     <input type="text" class="w-full rounded-lg mt-5" placeholder="Category Name" name="name">
     <input type="text" class="w-full rounded-lg mt-5" placeholder="Priority" name="priority">
 
