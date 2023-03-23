@@ -17,7 +17,10 @@
             <tr>
                 <td>{{$category->priority}}</td>
                 <td>{{$category->name}}</td>
-                <td>Edit Delete</td>
+                <td>
+                    <a href="" class="bg-blue-600 text-white px-3 py-1 rounded-lg mx-1">Edit</a>
+                    <a href="" class="bg-red-600 text-white px-3 py-1 rounded-lg mx-1">Delete</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
