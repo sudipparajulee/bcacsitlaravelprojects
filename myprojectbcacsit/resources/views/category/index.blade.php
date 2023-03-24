@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('layouts.message')
     <h2 class="text-4xl text-blue-600 border-b-4 border-blue-300">Categories</h2>
 
     <div class="my-5 text-right">
