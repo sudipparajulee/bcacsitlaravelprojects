@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/notice/{id}/update',[NoticeController::class,'update'])->name('notice.update');
     Route::post('/notice/delete',[NoticeController::class,'delete'])->name('notice.delete');
 
+
+    //Gallery
+    Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');
+    Route::get('/gallery/create',[GalleryController::class,'create'])->name('gallery.create');
+    Route::post('/gallery/store',[GalleryController::class,'store'])->name('gallery.store');
+    Route::get('/gallery/{gallery}/edit',[GalleryController::class,'edit'])->name('gallery.edit');
+    Route::post('/gallery/{gallery}/update',[GalleryController::class,'update'])->name('gallery.update');
+    Route::post('/gallery/delete',[GalleryController::class,'delete'])->name('gallery.delete');
 
 
     
