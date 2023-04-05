@@ -15,6 +15,7 @@
         <script src="{{asset('datatable/jquery-3.6.0.js')}}"></script>
         <script src="{{asset('datatable/datatables.js')}}"></script>
 
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -25,19 +26,20 @@
                     <img src="https://bitmapitsolution.com/images/logo/logo.png" class="w-10/12 mx-auto bg-white py-2 rounded-lg" alt="">
                 </div>
                 <div class="mt-12">
-                    <a href="{{route('dashboard')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">Dashboard</a>
+                    <a href="{{route('dashboard')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2"><i class="ri-dashboard-3-line"></i> Dashboard</a>
 
-                    <a href="{{route('notice.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">Notices</a>
+                    <a href="{{route('notice.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2"><i class="ri-mic-2-line"></i> Notices</a>
 
-                    <a href="{{route('gallery.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">Gallery</a>
+                    <a href="{{route('gallery.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2"><i class="ri-gallery-fill"></i> Gallery</a>
 
-                    <a href="{{route('category.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">Categories</a>
+                    <a href="{{route('category.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2"><i class="ri-bar-chart-horizontal-line"></i> Categories</a>
 
 
-                    <a href="{{route('news.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">News</a>
+                    <a href="{{route('news.index')}}" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2"><i class="ri-file-list-3-line"></i> News</a>
 
-                    <form action="{{route('logout')}}" method="POST" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2">
+                    <form action="{{route('logout')}}" method="POST" class="text-xl border-b-2 border-blue-600 block ml-5 hover:bg-blue-500 hover:text-white p-2 flex">
                         @csrf
+                        <i class="ri-logout-circle-line"></i> &nbsp;
                         <input type="submit" value="Logout" class="w-full text-left cursor-pointer">
                     </form>
 

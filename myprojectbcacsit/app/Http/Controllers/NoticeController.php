@@ -26,6 +26,7 @@ class NoticeController extends Controller
         ]);
 
         Notice::create($data);
+        
         return redirect(route('notice.index'))->with('success','Notice Added Successfully');
     }
 

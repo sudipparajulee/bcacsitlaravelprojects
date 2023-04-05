@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
 {
@@ -66,7 +67,8 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        $categories = Category::all();
+        return view('news.edit',compact('news','categories'));
     }
 
     /**
@@ -74,14 +76,39 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        $data = $request->validate([
+            'category_id' => 'required',
+            'description' => 'required',
+            'photopath' => 'nullable',
+            'title' => 'required',
+            'news_date' => 'required',
+        ]);
+
+        $data['photopath'] = $news->photopath;
+
+        if($request->file('photopath'))
+        {
+            $file = $request->file('photopath');
+            $filename = $file->getClientOriginalName();
+            $photopath = time().'_'.$filename;
+            $file->move(public_path('/images/news/'),$photopath);
+            File::delete(public_path(('/images/news/'.$news->photopath)));
+            $data['photopath'] = $photopath;
+        }
+
+        $news->update($data);
+        return redirect(route('news.index'))->with('success','News Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(News $news)
+    public function delete(Request $request)
     {
-        //
+        $news = News::find($request->dataid);
+        File::delete(public_path(('/images/news/'.$news->photopath)));
+        $news->delete();
+        return redirect(route('news.index'))->with('success','News Deleted Successfully');
+        
     }
 }
